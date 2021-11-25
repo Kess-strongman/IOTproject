@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <meta name="description" content="" charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SmartBulbs</title>
+
+        <link rel="apple-touch-icon" href="images/favicon.ico"/>
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+       
+        <link rel="stylesheet" href="index.css">
+        
+        <script src="index.js"></script>
+        <script src="bulb.js"></script>
+    </head>
+    <body>
+        <nav id="headingbar">
+            <p id="time">time</p>
+            <p id="location">location</p>
+            <h1>SmartBulbs</h1>
+            <img src="images/profile.jpg" width="20px" height="20px"></img>
+            <img src="images/settings_icon_176440.png" width="20px" height="20px"></img>
+        </nav>
+        <main>
+            
+            <section id="weather" class="box">
+                <h2>Weather outside</h2>
+                <img id="weatherimg" src='images/loader.jpg' alt="weathericon" width="100px" height="100px">
+                <div id="weatherdeets">
+                    <p id="weatherdesc">loading</p>
+                    <p id="cloudcoverage">loading</p>
+                    <p id="sunrise">loading</p>
+                    <p id="sunset">loading</p>
+                </div>
+            </section>
+            <section id="lightsensor" class="box">
+                <h4>Sunlight intensity</h4>
+                <p id="lightindex">5 UVI </p>
+            </section>
+            <section id="occupancy" class="box">
+                <h4>Occupancy</h4>
+                <p id="occuppercent">40%</p>
+            </section>
+            <section id="energyuse" class="box">
+                <div>
+                    <h4>Energy used</h4>
+                    <img src="images/gauge.png" width="100px" height="100px"></img>
+                </div>
+                <div>
+                    <h4>energy Budget</h4>
+                    <p>350 kWh per month</p>
+                </div>
+                <div>
+                    <h4>Energy saved</h4>
+                    <p>50 kWh</p>
+                </div>
+            </section>
+            <section id="lightdata" class="box">
+                <p id="hue">hue: 0.1 Blue, 0.4 Green, 0.5 Red</p> <p>Brightness: 50 lumens</p>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -13,10 +13,9 @@
         <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
        
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="main.css">
         
-        <script src="index.js"></script>
-        <script src="bulb.js"></script>
+        <script src="main.js"></script>
     </head>
     <body>
         <nav id="headingbar">
@@ -70,7 +69,8 @@
                 <br>
                 <p id="bulblocation">Bedroom bulb 1</p>
                 <div id="bulbpower">
-                    <p>ON</p>
+                    <input type="button" value="on" name="buttOn" onclick="togglePower('on')">
+                    <input type="button" value="off" name="buttOff" onclick="togglePower('off')">
                 </div>
                 
                 </aside>
@@ -96,4 +96,5 @@
             </section>
         </main>
     </body>
+
 </html>

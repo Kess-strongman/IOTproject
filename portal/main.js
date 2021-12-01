@@ -5,10 +5,9 @@ var MYURL = "http://unn-w18011712.newnumyspace.co.uk/IOTproject/portal/";
 
 // when page loads
 $(document).ready(function() {
-  timeinterval = setInterval(displaytime, 1000)
+  timeinterval = setInterval(displaytime, 1000);
    //bulbinterval = setInterval(ingestBulb, 10000)
-    getLocation()
-   ingestBulb()
+    getLocation();
 });//window event listener end
 
 function displaytime() {
@@ -27,6 +26,15 @@ function getLocation() {
     $("#location").text("Geolocation is not supported by this browser.");
   }
 }
+
+function togglePower(status) {
+  let ajaxurl = 'bulb.php',
+  data =  {'status': status};
+  $.post(ajaxurl, data, function (response) {
+    console.log("Set status: " + status);
+    console.log(response);
+  });
+  }
 
 function showPosition(position) {
   

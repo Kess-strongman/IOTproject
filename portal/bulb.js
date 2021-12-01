@@ -1,10 +1,18 @@
 function ingestBulb() {
+    
     $.ajax({
-        type: 'GET',
-        url: MYURL + "bulb.php",
-        // headers: {
-        //     "wf-tkn": usertoken,
-        // },
+        type: 'POST',
+        url: "https://api.lifx.com/v1/lights/all/state",
+         headers: {
+             
+         },
+         beforeSend: function (xhr) {
+            /* Authorization header */
+            xhr.setRequestHeader("Authorization","Bearer c081387548f098b18c10847dfe193371c438c481334b6d41989e45965c56ad12");
+           
+        },
+         data: {"power": "off"},
+         
         success: function(data) {
             //var r = JSON.parse(data); 
             console.log("success", data)
@@ -14,7 +22,7 @@ function ingestBulb() {
             // }
         },
         error: function(xhr, ajaxOptions, thrownError) {
-           // var error = JSON.parse()
+            console.log(xhr)
             alert(xhr.status + " : "+xhr.responseText);
         }
     });

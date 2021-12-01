@@ -1,14 +1,14 @@
 var apikey = "cb6d166ce74eaa13d1d2bcd086fefedb"
 
 var timeinterval, bulbinterval;
-var MYURL = "http://unn-w18011712.newnumyspace.co.uk/IOTproject/";
+var MYURL = "http://unn-w18011712.newnumyspace.co.uk/IOTproject/portal/";
 
 // when page loads
 $(document).ready(function() {
   timeinterval = setInterval(displaytime, 1000)
-   bulbinterval = setInterval(ingestBulb, 10000)
+   //bulbinterval = setInterval(ingestBulb, 10000)
     getLocation()
-   
+   ingestBulb()
 });//window event listener end
 
 function displaytime() {
@@ -56,9 +56,9 @@ $.get("https://api.openweathermap.org/data/2.5/weather?q="+town+"&units=metric&a
     Setweathericon(data.clouds.all)
     var sunrise = new Date(data.sys.sunrise*1000)
     console.log(sunrise)
-    $("#sunrise").text("Sunrise <br>" + sunrise.getHours() + ":" +sunrise.getMinutes())
+    $("#sunrise").html("Sunrise <br>" + sunrise.getHours() + ":" +sunrise.getMinutes())
     var sunset = new Date(data.sys.sunset*1000)
-    $("#sunset").text("Sunset <br>=" + sunset.getHours() + ":" +sunset.getMinutes())
+    $("#sunset").html("Sunset <br>" + sunset.getHours() + ":" +sunset.getMinutes())
 }).fail(function() {
    console.log("api failed")
 });

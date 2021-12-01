@@ -44,8 +44,8 @@ body {
        height: 370px;
    }
    #weatherdeets {
-       display:flex;
-       flex-direction: row;
+       display:grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
    }
    
    #lightsensor, #occupancy{
@@ -75,4 +75,27 @@ body {
    #lightdata {
        width: 95%;
        height:160px;
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
    }
+   #lightdata aside {
+    margin:auto;
+}
+#lightdata aside label {
+    margin:auto;
+}
+#lightdata input {
+    width:60px;
+    margin:auto;
+}
+   #bulbpower {
+    border:black double;
+    width:40px;
+    height:30px;
+ background-color:darkseagreen;
+}
+#bulbpower p{
+    text-align:center;
+    padding:5px;
+    margin:auto;
+}

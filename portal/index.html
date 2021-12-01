@@ -61,7 +61,38 @@
                 </div>
             </section>
             <section id="lightdata" class="box">
-                <p id="hue">hue: 0.1 Blue, 0.4 Green, 0.5 Red</p> <p>Brightness: 50 lumens</p>
+                <aside>
+                <select id="bulbs">
+                    <option>Bulb1</option>
+                    <option>Bulb2</option>
+                    <option>Bulb3</option>
+                </select>
+                <br>
+                <p id="bulblocation">Bedroom bulb 1</p>
+                <div id="bulbpower">
+                    <p>ON</p>
+                </div>
+                
+                </aside>
+            <aside>
+                <p text-decoration="bold">Hue:</p>
+                <label>Blue:</label>
+                <input type="text" id="bluehue" name="bluehue" disabled><br>
+                <label>Red:</label>
+                <input type="text" id="Red" name="redhue" disabled><br>
+                <label>Green:</label>
+                <input type="text" id="greenhue" name="greenhue" disabled><br>
+            </aside>
+            <aside>
+                <label>Brightness:</label><br>
+                <input type="text" id="bulbbrightness" name="bulbbrightness">
+                <p>lumens</p><br>
+            </aside>
+            <aside>
+                <label>Energy usage:</label><br>
+                <input type="text" id="bulbenergy" name="bulbenergy">
+                <p>watts</p><br>
+            </aside>
             </section>
         </main>
     </body>

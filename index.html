@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="description" content="" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulbzy</title>
+
+    <link rel="apple-touch-icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+
+    <script src="main.js"></script>
+    <script src="data.js"></script>
+    <script src="functionality.js"></script>
+</head>
+
+<body>
+    <nav id="headingbar" class="box">
+        <p id="time">time</p>
+        <p id="location">location</p>
+        <h1>Bulbzy</h1>
+        <div id="icons">
+        <img src="images/profile.jpg" width="20px" height="20px"></img>
+        <img src="images/settings_icon_176440.png" width="20px" height="20px" onclick="showSettings();"></img>
+    </div>
+    </nav>
+    <main>
+        <div id="login" class="hideable">
+            <form id="loginform" class="box">
+                <input type="text" id="uid" name="username" placeholder="Username" required value="testuser"><br><br>
+                <input type="password" id="pwd" name="password" placeholder="Password" required value="9876543"><br>
+                <p id="loginerror"> </p>
+                <span class="psw" onclick="resetPassword()"><a href="#">Forgot password?</a></span><br><br>
+                <input type="button" id="loginbtn" class="buttstyle" value="Login" onclick="doLogin()"><br><br>
+            </form>
+        </div>
+        <div id="home" class="hideable">
+            <section id="weather" class="box">
+                <h2>Weather outside</h2>
+                <img id="weatherimg" src='images/loader.jpg' alt="weathericon" width="100px" height="100px">
+                <div id="weatherdeets">
+                    <p id="weatherdesc">loading</p>
+                    <p id="cloudcoverage">loading</p>
+                    <p id="sunrise">loading</p>
+                    <p id="sunset">loading</p>
+                </div>
+            </section>
+            <section id="lightsensor" class="box">
+                <h4>Sunlight intensity</h4>
+                <div class="sensoroutput">
+                    <p id="lightindex"></p>
+                <select id="PIRroom">
+                    <option>bedroom 1</option>
+                 </select>
+                
+            </div>
+            </section>
+            <section id="occupancy" class="box">
+                <h4>Occupancy</h4>
+                <div class="sensoroutput">
+                <p id="occuppercent"></p>
+                <select id="PIRroom">
+                    <option>bedroom 1</option>
+                     </select>
+            </div>
+            </section>
+            <section id="energyuse" class="box">
+                <div>
+                    <h4>Energy used</h4>
+                    <img src="images/gauge.png" width="100px" height="100px"></img>
+                </div>
+                <div>
+                    <h4>Current Energy usage</h4>
+                    <p id="currentenergy"></p>
+                </div>
+                <div>
+                    <h4>Energy saved</h4>
+                    <p>50 kWh</p>
+                </div>
+            </section>
+            <section id="lightdata" class="box">
+                <aside>
+                    <select id="bulbs" onchange='getBulb()''>
+                        <option value="" selected>Choose bulb</option>
+                    </select>
+                    <br>
+                    <input type="text" id="bulb_id" disabled>
+                    
+
+                </aside>
+                <aside>
+                    
+                    <div id="bulbpower">
+                        <input type="button" value="on" id="buttOn" onclick="togglePower('on')">
+                        <input type="button" value="off" id="buttOff" onclick="togglePower('off')">
+                    </div>
+                </aside>
+                <aside>
+                    <label>Kelvin:</label>
+                    <input type="text" id="kelvin" name="kelvin" disabled><br>
+                    <label>Brightness:</label>
+                    <input type="text"  id="brightness" disabled><br>
+                </aside>
+
+                <aside>
+                    <input type="button" value="refresh" name="butt" onclick='getBulb()'>
+                </aside>
+                
+            </section>
+        </div>
+        <div id="settings" class="hideable">
+            <div class="box" onclick="showHome()" id="back">&#8592;</div>
+
+            <div class="box">
+                <h4>Connection settings</h4>
+                <div id="wifi" class="settingsbox">
+                    <p>Wifi connections</p>
+                    <label>username</label>
+                    <input type="text" id="wifiusr" value="home-wifi-5">
+                    <label>password</label>
+                    <input type="text" password id="wifipswrd" value="***************">
+                    <input type="button" id="connectwifi" value="Connect">
+                </div>
+                <div id="account" class="settingsbox">
+                    <p>Account Details</p>
+                    <label>username/email</label>
+                    <input type="text" id="usr" value="testuser@email.com">
+                    <label>password</label>
+                    <input type="text" password id="usrpswrd" value="**********">
+                    <input type="button" id="changepassword" value="Change Password">
+                    <input type="button" id="logout" value="Logout">
+                </div>
+            </div>
+            <div class="box">
+                <h4>Personal Preferences</h4>
+                <div id="energy" class="settingsbox">
+                   <p> Energy information </p>
+                    <label>Energy supplier</label>
+                    <input type="text" id="supplier" value="SSE">
+                    <label>Energy price per kWh</label>
+                    <input type="text"  id="ppkwh" value="£0.05">
+                    <label>Energy budget(monthly)</label>
+                    <input type="button" id="budget" value="£43">
+                </div>
+                <div id="preferences" class="settingsbox">
+                    <p>Manage Preferences</p>
+                    <label>automatic location</label>
+                    <input type="checkbox" checked>
+                    <input type="text" id="location">
+                    <label>Bedtime</label>
+                    <input type="text" id="bedtime" value="21:30">
+                    <label>Energy budget(monthly)</label>
+                    <input type="button" id="connectwifi" value="Connect">
+                </div>
+            </div>
+            <div class="box">
+                <h4>Devices</h4>
+                <div id="activedevices" class="settingsbox"> 
+                    <label>Active Devices</label>
+                   
+                </div>
+                <div id="inactivedevices" class="settingsbox"> 
+                    <label>Inactive Devices</label>
+                   
+                </div>
+                <div id="adddevs" class="settingsbox">
+                    <label>Device ID</label>
+                    <input type="text" id="newdevid" placeholder="abcedfg">
+                    <label>Given name</label>
+                    <input type="text" id="newdevname" placeholder="kitchen 1">
+                    <input type="button" id="addingdev" value="Add Device" onclick="AddDevice()">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

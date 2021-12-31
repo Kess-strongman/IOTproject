@@ -1,0 +1,177 @@
+body {
+    background-color: black;
+}
+/*---------------------login ---------------------*/
+
+
+#loginbtn {
+    width: 30%;
+    border:none;
+    padding:5px;
+    background-color:darkgrey;
+    
+    border-radius: 7px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+#loginform {
+    margin-top:10%;
+    margin-left:35%;
+    width: 30%;
+    height: 30%;
+    padding: 40px;
+    text-align:center;
+}
+#loginform>input[type=text],
+#loginform>input[type=password] {
+    padding: 10px;
+    background-color: rgba(206, 206, 206, 0.322);
+    margin: auto;
+    width: 70%;
+    border: none;
+}
+
+#loginerror {
+    color: red;
+}
+
+/*************************/
+#home {
+    width:auto;
+    margin-top:3%;
+    padding: 50px;
+}
+#home>input[type=button] {
+    margin: 3%;
+    height:6rem;
+    width:auto;
+}
+#headingbar{
+    height:5%;
+    width:80%;
+    margin:auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    flex-direction: row;
+    padding:30px;
+   }
+   h1 {
+    margin:auto;
+    padding:0;
+    width: 10%;
+}
+#headingbar p {
+    float:left;
+    padding: 5px;
+    margin:auto;
+}
+#icons{
+    width:60px;
+    padding: 5px;
+    margin-left:auto;
+}
+
+
+   #home {
+       width: 88%;
+       margin:auto;
+       margin-left: 6%;
+   }
+   
+   .box{
+       float:left;
+       background-color: white;
+       margin: 8px 8px 8px 8px;
+       padding: 0px 18px 0 18px;
+       border-radius: 7px;
+       box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 22px 0 rgba(0, 0, 0, 0.19);
+       overflow:auto;
+   }
+   
+   #weather{
+       display: block;
+       width:30%;
+       height: 370px;
+   }
+   #weatherdeets {
+       display:grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+   }
+   
+   #lightsensor, #occupancy{
+    display: block;
+    width: 27.5%;
+    height: 155px;
+}
+.sensoroutput {
+ display:flex;
+ flex-direction:row;
+ margin:20px;
+}
+#lightindex, #occuppercent {
+     margin:auto;
+     font-size: 3em;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     font-weight: bold;
+     margin-left:auto;
+ }
+ #lightsensor select, #occupancy select {
+    height:2em;
+     margin-right:auto;
+ }
+   
+   #energyuse {
+       width:59%;
+       height: 195px;
+
+       display:flex;
+       flex-direction: row;
+   }
+   #energyuse div {
+       margin:auto;
+       padding:10px;
+   }
+   
+   #lightdata {
+       width: 93%;
+       height:158px;
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+   }
+   #lightdata aside {
+    margin:auto;
+}
+#lightdata aside label {
+    margin:10px;
+}
+#lightdata input {
+    width:90px;
+    margin:auto;
+}
+#bulbpower {
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+    margin:10px;
+}
+#bulbpower p{
+    text-align:center;
+    padding:5px;
+}
+
+#settings {
+    width:80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.settingsbox {
+    background-color: lightgrey;
+    border: solid thin grey;
+    margin:10px;
+    padding:10px;
+}
+#back {
+    width:5%;
+}
